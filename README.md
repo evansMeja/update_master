@@ -1,11 +1,11 @@
-## go to frontend folder
+## on a new terminal go to frontend folder and run commands
 
 npm install
 
 npm start
 
 
-## go to backend folder
+## on another terminal go to backend folder and run commands
 
 pip install -r requirements.txt
 
