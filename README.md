@@ -1,12 +1,14 @@
-got to frontend
+## go to frontend folder
 
 npm install
+
 npm start
 
 
-got to backend
+## go to backend folder
 
 pip install -r requirements.txt
+
 python manage.py runserver
 
 
