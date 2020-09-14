@@ -4,4 +4,5 @@ from .views import *
 
 urlpatterns = [
     path('api-data/', getdata, name="getdata"),
+    path('delete-data/<int:pk>', deletedata, name="deletedata"),
 ]

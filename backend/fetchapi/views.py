@@ -24,3 +24,7 @@ def getdata(request):
         l.append(qs_json) 
         qs_json = json.dumps(l) 
     return HttpResponse(qs_json, content_type='application/json')
+
+def deletedata(request,pk):
+    table1.objects.filter(id=pk).delete()
+    return JsonResponse({"msg":"deleted"})
