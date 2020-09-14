@@ -26,5 +26,18 @@ def getdata(request):
     return HttpResponse(qs_json, content_type='application/json')
 
 def deletedata(request,pk):
+    print(request.GET)
+    print(request.method)
     table1.objects.filter(id=pk).delete()
     return JsonResponse({"msg":"deleted"})
+
+def apiupdate(request,pk):
+    oname =request.GET.get('oem_name')
+    otype =request.GET.get('oem_type')
+    obj = table1.objects.get(id=pk)
+    obj.oem_type = otype
+    obj.oem_name=oname
+    obj.save()
+    return JsonResponse({"msg":"updates"})
+
+    
