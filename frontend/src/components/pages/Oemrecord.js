@@ -1,13 +1,6 @@
 import React from "react";
 
-async function fetchDataAsync() {
-    const response = await fetch('http://127.0.0.1:8000/api/api-data/');
-    console.log(await response.json())
-}
-
-
 const Oemrecord = () => {
-    fetchDataAsync();
     return (
         // <!-- Begin Page Content -->
         <div class="container-fluid">
@@ -51,7 +44,7 @@ const Oemrecord = () => {
                                         <button type="button" class="btn btn-success" aria-haspopup="true" aria-expanded="false">
                                             Edit
                                          </button><div class="btn-group">
-                                            <button onClick="Test()" type="button" class="btn btn-danger" aria-haspopup="true" aria-expanded="false">
+                                            <button type="button" class="btn btn-danger" aria-haspopup="true" aria-expanded="false">
                                                 Delete
                                         </button>
                                         </div>
@@ -116,7 +109,5 @@ const Oemrecord = () => {
         // <!-- /.container-fluid -->
     )
 }
-
-
 
 export default Oemrecord;

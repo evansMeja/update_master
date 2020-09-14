@@ -1,6 +1,17 @@
 import React from "react";
 
+async function fetchDataAsync() {
+  const response = await fetch('http://127.0.0.1:8000/api/api-data/');
+  var json_r = await response.json()
+  for(var i=0;i<json_r.length;i++){
+      console.log(json_r[i].fields)
+      var textString =' <tr> <td>'+json_r[i].fields.oem_id+'</td><td> '+json_r[i].fields.oem_name+'</td><td>'+json_r[i].fields.oem_type+'</td><td><div class="btn-group"> <button type="button" class="btn btn-success" aria-haspopup="true" aria-expanded="false"> Edit </button><div class="btn-group"> <button type="button" class="btn btn-danger" aria-haspopup="true" aria-expanded="false"> Delete </button> </div></div></td></tr>'
+      document.getElementById('result').innerHTML= document.getElementById('result').innerHTML +textString
+  }
+}
+
 const Tables = () => {
+  fetchDataAsync()
   return (
     // <!-- Begin Page Content -->
     <div class="container-fluid">
@@ -37,212 +48,11 @@ const Tables = () => {
                 </tr>
 
               </tfoot>
-              <tbody>
-                <tr>
-                  <td>Tiger Nixon</td>
-                  
-                  <td>
-                    <div class="btn-group">
-                      <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Select
-                      </button>
-                      <div class="dropdown-menu">
-                        <a class="dropdown-item" href="#">Action</a>
-                        <a class="dropdown-item" href="#">Another action</a>
-                        <a class="dropdown-item" href="#">Something else here</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Separated link</a>
-                      </div>
-                    </div>
-                  </td>
-                  <td>
-                  <div class="btn-group">
-                      <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Select
-                      </button>
-                      <div class="dropdown-menu">
-                        <a class="dropdown-item" href="#">Action</a>
-                        <a class="dropdown-item" href="#">Another action</a>
-                        <a class="dropdown-item" href="#">Something else here</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Separated link</a>
-                      </div>
-                    </div>
-                  </td>
-                  <td><div class="btn-group">
-                                        <button type="button" class="btn btn-success" aria-haspopup="true" aria-expanded="false">
-                                            Edit
-                                         </button><div class="btn-group">
-                                            <button type="button" class="btn btn-danger" aria-haspopup="true" aria-expanded="false">
-                                                Delete
-                                        </button>
-                                        </div>
-                                    </div></td>
-                </tr>
-                <tr>
-                  <td>Tiger Nixon</td>
-                  
-                  <td>
-                    <div class="btn-group">
-                      <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Select
-                      </button>
-                      <div class="dropdown-menu">
-                        <a class="dropdown-item" href="#">Action</a>
-                        <a class="dropdown-item" href="#">Another action</a>
-                        <a class="dropdown-item" href="#">Something else here</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Separated link</a>
-                      </div>
-                    </div>
-                  </td>
-                  <td>
-                  <div class="btn-group">
-                      <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Select
-                      </button>
-                      <div class="dropdown-menu">
-                        <a class="dropdown-item" href="#">Action</a>
-                        <a class="dropdown-item" href="#">Another action</a>
-                        <a class="dropdown-item" href="#">Something else here</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Separated link</a>
-                      </div>
-                    </div>
-                  </td>
-                  <td><div class="btn-group">
-                                        <button type="button" class="btn btn-success" aria-haspopup="true" aria-expanded="false">
-                                            Edit
-                                         </button><div class="btn-group">
-                                            <button type="button" class="btn btn-danger" aria-haspopup="true" aria-expanded="false">
-                                                Delete
-                                        </button>
-                                        </div>
-                                    </div></td>
-                </tr>
-                <tr>
-                  <td>Tiger Nixon</td>
-                  
-                  <td>
-                    <div class="btn-group">
-                      <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Select
-                      </button>
-                      <div class="dropdown-menu">
-                        <a class="dropdown-item" href="#">Action</a>
-                        <a class="dropdown-item" href="#">Another action</a>
-                        <a class="dropdown-item" href="#">Something else here</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Separated link</a>
-                      </div>
-                    </div>
-                  </td>
-                  <td>
-                  <div class="btn-group">
-                      <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Select
-                      </button>
-                      <div class="dropdown-menu">
-                        <a class="dropdown-item" href="#">Action</a>
-                        <a class="dropdown-item" href="#">Another action</a>
-                        <a class="dropdown-item" href="#">Something else here</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Separated link</a>
-                      </div>
-                    </div>
-                  </td>
-                  <td><div class="btn-group">
-                                        <button type="button" class="btn btn-success" aria-haspopup="true" aria-expanded="false">
-                                            Edit
-                                         </button><div class="btn-group">
-                                            <button type="button" class="btn btn-danger" aria-haspopup="true" aria-expanded="false">
-                                                Delete
-                                        </button>
-                                        </div>
-                                    </div></td>
-                </tr>
-                <tr>
-                  <td>Tiger Nixon</td>
-                  
-                  <td>
-                    <div class="btn-group">
-                      <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Select
-                      </button>
-                      <div class="dropdown-menu">
-                        <a class="dropdown-item" href="#">Action</a>
-                        <a class="dropdown-item" href="#">Another action</a>
-                        <a class="dropdown-item" href="#">Something else here</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Separated link</a>
-                      </div>
-                    </div>
-                  </td>
-                  <td>
-                  <div class="btn-group">
-                      <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Select
-                      </button>
-                      <div class="dropdown-menu">
-                        <a class="dropdown-item" href="#">Action</a>
-                        <a class="dropdown-item" href="#">Another action</a>
-                        <a class="dropdown-item" href="#">Something else here</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Separated link</a>
-                      </div>
-                    </div>
-                  </td>
-                  <td><div class="btn-group">
-                                        <button type="button" class="btn btn-success" aria-haspopup="true" aria-expanded="false">
-                                            Edit
-                                         </button><div class="btn-group">
-                                            <button type="button" class="btn btn-danger" aria-haspopup="true" aria-expanded="false">
-                                                Delete
-                                        </button>
-                                        </div>
-                                    </div></td>
-                </tr>
-                <tr>
-                  <td>Tiger Nixon</td>
-                 
-                  <td>
-                    <div class="btn-group">
-                      <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Select
-                      </button>
-                      <div class="dropdown-menu">
-                        <a class="dropdown-item" href="#">Action</a>
-                        <a class="dropdown-item" href="#">Another action</a>
-                        <a class="dropdown-item" href="#">Something else here</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Separated link</a>
-                      </div>
-                    </div>
-                  </td>
-                  <td>
-                  <div class="btn-group">
-                      <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Select
-                      </button>
-                      <div class="dropdown-menu">
-                        <a class="dropdown-item" href="#">Action</a>
-                        <a class="dropdown-item" href="#">Another action</a>
-                        <a class="dropdown-item" href="#">Something else here</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Separated link</a>
-                      </div>
-                    </div>
-                  </td>
-                  <td><div class="btn-group">
-                                        <button type="button" class="btn btn-success" aria-haspopup="true" aria-expanded="false">
-                                            Edit
-                                         </button><div class="btn-group">
-                                            <button type="button" class="btn btn-danger" aria-haspopup="true" aria-expanded="false">
-                                                Delete
-                                        </button>
-                                        </div>
-                                    </div></td>
-                </tr>
+              <tbody id="result">
+                
+
+            
+               
               </tbody>
             </table>
           </div>
