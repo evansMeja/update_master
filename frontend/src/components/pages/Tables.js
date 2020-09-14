@@ -1,17 +1,18 @@
 import React from "react";
+import $ from 'jquery';
 
 async function fetchDataAsync() {
   const response = await fetch('http://127.0.0.1:8000/api/api-data/');
   var json_r = await response.json()
+  console.log();
   for(var i=0;i<json_r.length;i++){
-      console.log(json_r[i].fields)
-      var textString =' <tr> <td>'+json_r[i].fields.oem_id+'</td><td> '+json_r[i].fields.oem_name+'</td><td>'+json_r[i].fields.oem_type+'</td><td><div class="btn-group"> <button type="button" class="btn btn-success" aria-haspopup="true" aria-expanded="false"> Edit </button><div class="btn-group"> <button type="button" class="btn btn-danger" aria-haspopup="true" aria-expanded="false"> Delete </button> </div></div></td></tr>'
-      document.getElementById('result').innerHTML= document.getElementById('result').innerHTML +textString
+      var textString =' <tr> <td>'+json_r[i][0].fields.oem_id+'</td><td> '+json_r[i][0].fields.oem_name+'</td><td>'+json_r[i][0].fields.oem_type+'</td><td><div class="btn-group"> <button type="button" class="btn btn-success" aria-haspopup="true" aria-expanded="false"> Edit </button><div class="btn-group"> <button type="button" class="btn btn-danger" aria-haspopup="true" aria-expanded="false"> Delete </button> </div></div></td></tr>'
+      $("#result").append(textString);
   }
 }
 
 const Tables = () => {
-  fetchDataAsync()
+  fetchDataAsync();
   return (
     // <!-- Begin Page Content -->
     <div class="container-fluid">
